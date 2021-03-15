@@ -1,0 +1,24 @@
+//P5.js KODE
+
+//SETUP --------------------------------------- SETUP
+function setup() {             //VI BRUKER IKKE "void" I P5.js - VI BRUKER "function"
+  createCanvas(800, 600);      //BESTEMMER STØRRELSEN PÅ VINDUET
+}
+
+//DRAW ---------------------------------------- DRAW
+function draw() {
+  background(100, 0, 155);    //BESTEMMER FARGEN PÅ BAKGRUNNEN
+  ellipse(100,100,50,50);     //LAGER EN ELLIPSE (X-KOODRINAT,Y-KOORDINAT,BREDDE,HØYDE)
+  rect(300,200,40,40);        //LAGER ET REKTANGEL (X-KOORDINAT,Y-KOODRINAT,BREDDE,HØYDE)
+  line(400,500,700,200);      //LAGER EN LINJE MELLOM (X,Y TIL X,Y)
+}
+
+/*
+
+KODE DU KAN LEKE MED:
+
+fill(r,g,b);                   //BRUKES TIL Å FYLLE FORMER MED FARGE
+stroke(r,g,b);                 //BRUKES TIL Å FARGE OMRISS AV FORMER OG LINJER
+mouseX og mouseY               //SETTER X OG Y KOODRINATER ETTER HVOR MUSEPEKEREN/FINGEREN ER
+
+*/
