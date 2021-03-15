@@ -1,0 +1,29 @@
+//ANBEFALER Å LIME KODEN INN I TINKERCAD ELLER ARDUINO IDE FOR Å FÅ FARGER I KODEN
+
+//VARIABLER --------------------------------- VARIABLER
+int redLed = 13;                             //LAGER EN VARIABEL SOM KNYTTER "REDLED" TIL TALLET 13
+int pause = 100;                             //LAGER EN VARIABEL SOM LAGRER ANTALLET MILLISEKUNDER VI SKAL HA PAUSE
+String serialVerdi;                          //VI LAGER EN VARIABEL FOR Å LAGRE MELDINGEN SOM KOMMER FRA SERIAL MONITOR
+
+//SETUP ------------------------------------- SETUP
+void setup() {
+  pinMode(redLed, OUTPUT);                   //VI SETTER PINNE 13 TIL OUTPUT VED Å BRUKE VARIABELEN "redLed"
+  Serial.begin(9600);                        //VI STARTER SERIAL MONITOR
+}
+
+//LOOP --------------------------------------- LOOP
+void loop() {
+	while(Serial.available() == 0){           //SÅ LENGE DET IKKE ER NOE DATA I SERIAL MONITOR VIL ARUDINOEN GÅ I LOOP
+		                                        //MELLOM KLAMMENE. DET ER INGENTING DER, SÅ INGENTING VIL SKJE. DEN "VENTER".
+	}
+	serialVerdi = Serial.readString();        //SÅ SNART NOE DUKKER OPP I SERIAL MONITOR VIL DET LAGRES I VARIABELEN "serialVerdi"
+	
+	if (serialVerdi == "J") {                 //VI SJEKKER FOR Å SE HVA SOM ER LAGRET I VARIABELEN "serialVerdi". ER DET "J"?
+	digitalWrite(redLed, HIGH);               //DERSOM DET ER "J" VIL KODEN MELLOM KLAMMENE KJØRES. redLed SETTES TIL HIGH.
+		
+	if (serialVerdi == "N") {                 //VI SJEKKER FOR Å SE HVA SOM ER LAGRET I VARIABELEN "serialVerdi". ER DET "N"?
+		digitalWrite(redLed, LOW);              //DERSOM DET ER "N" VIL KODEN MELLOM KLAMMENE KJØRES. redLed SETTES TIL LOW.
+	}
+	delay(pause);                             //LITEN PAUSE FOR Å MINIMERE FEIL KNYTTET TIL HENTING AV DATA FRA SERIAL MONITOR.
+}}
+
